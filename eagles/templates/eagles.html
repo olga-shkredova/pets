@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_content %}
+<div class="qwe" style="background: pink ">
+    <div class="row" align="center" style="margin-left: 10px; margin-right: 10px; height: 600px; ">
+    <h1>ОРЛЫ</h1>
+        {% for eagle in eagles %}
+        <div class="col-md-4">
+            <div class="desc">
+                <h4>{{ eagle.title }}</h4>
+                <img class="card-img-top" src="{% static eagle.image %}" style="height: 200px; width: 150px ">
+                <h4>{{ eagle.species }}</h4>
+                <h2>{{ eagle.description }}</h2>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+
+    <div class="row" style="margin-top: 100px; height: 600px; width:100% ">
+        <div class="desc2" style="text-align: center;">
+            <p>ОРЛЫ: <br>
+                {% for eagle in eagles %}
+                {{ eagle.title }} {{ eagle.species }}
+                <img class="card-img-top" src="{% static eagle.image %}"
+                     style="width: 100px; height: auto; display: inline-block; margin-right: 10px;">
+                {% endfor %}
+            </p>
+        </div>
+    </div>
+{% endblock %}
+
+</div>

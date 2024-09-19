@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_content %}
+<div class="qwe">
+    <div class="row" align="center" style="margin: 0 10%;">
+    <h1>КОТИКИ</h1>
+        {% for cat in cats %}
+        <div class="col-md-4">
+            <div class="desc">
+                <h4>{{ cat.title }}</h4>
+                <img class="card-img-top" src="{% static cat.image %}" width="100%" height="60%">
+                <h4>{{ cat.species }}</h4>
+                <h2>{{ cat.description }}</h2>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <div class="desc2" style="margin: 0 5%; text-align: center;">
+        <p>CATS: <br>
+            {% for cat in cats %}
+            {{ cat.title }} {{ cat.species }}
+            <img class="card-img-top" src="{% static cat.image %}" style="width: 100px; height: auto; display: inline-block; margin-right: 10px;">
+            {% endfor %}
+        </p>
+    </div>
+{% endblock %}
+
+</div>

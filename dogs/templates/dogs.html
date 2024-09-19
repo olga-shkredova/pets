@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_content %}
+<div class="qwe" style="background: black; color: white; height: 1500px;">
+    <div class="row" align="center" style="margin: 0 10%;">
+    <h1>СОБАЧКИ</h1>
+        {% for dog in dogs %}
+        <div class="col-md-4">
+            <div class="desc">
+                <h4>{{ dog.title }}</h4>
+                <img class="card-img-top" src="{% static dog.image %}" width="100%" height="60%">
+                <h4>{{ dog.species }}</h4>
+                <h2>{{ dog.description }}</h2>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <div class="desc2" style="margin-top: -600px; margin-right: 100px; text-align: right;">
+        <p>СОБАЧКИ: <br>
+            {% for dog in dogs %}
+            {{ dog.title }} {{ dog.species }}
+            <img class="card-img-top" src="{% static dog.image %}"
+                 style="width: 100px; height: auto; display: inline-block; margin-right: 10px;">
+            {% endfor %}
+        </p>
+    </div>
+{% endblock %}
+
+</div>
